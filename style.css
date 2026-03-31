@@ -149,9 +149,14 @@ body {
     width: 100%; /* Links fill row */
 }
 
-.link-item i {
+.link-icon {
     width: 20px;
     height: 20px;
+}
+
+.link-icon-small {
+    width: 14px;
+    height: 14px;
 }
 
 .link-item:hover {
@@ -226,7 +231,7 @@ body {
     color: var(--text-primary);
 }
 
-.copy-btn i {
+.copy-btn i, .copy-btn img {
     width: 18px;
     height: 18px;
 }
