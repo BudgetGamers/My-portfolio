@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetGamers Info and Help</title>
+    <meta name="description" content="A minimal, centered portfolio featuring social links, bio, and more.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- OpenGraph (Discord/Socials) -->
+    <meta property="og:title" content="Portfolio | My Space">
+    <meta property="og:description" content="A minimal, centered portfolio featuring social links, bio, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://api.dicebear.com/7.x/avataaars/svg?seed=portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b82f6'/><text x='10' y='75' font-family='Arial' font-size='70' fill='white'>P</text></svg>">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+    
+    <div class="sticky-logo-container">
+        <img src="Images/Logo.png" alt="BudgetGamers Logo" class="sticky-logo">
+    </div>
+    
+    <main class="container">
+        <div class="profile-card">
+            <header class="profile-header">
+                <div class="avatar-container">
+                    <!-- Placeholder avatar, you can replace this with your actual image -->
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=portfolio" alt="Avatar" class="avatar">
+                </div>
+                <h1 class="profile-name">BudgetGamers Info and Help</h1>
+                <p class="profile-bio">
+                    Building things that matter. Creative developer and enthusiast. 
+                    Exploring the intersection of code, design, and gaming.
+                </p>
+            </header>
+            
+            <section class="links-section">
+                <a href="https://discord.gg/yourserver" target="_blank" class="link-item discord" id="discord-link">
+                    <i data-lucide="message-square"></i>
+                    <span>Discord</span>
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" class="link-item github" id="github-link">
+                    <i data-lucide="github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://curseforge.com/members/yourusername" target="_blank" class="link-item curseforge" id="curseforge-link">
+                    <i data-lucide="box"></i>
+                    <span>CurseForge</span>
+                </a>
+                <a href="https://docs.google.com/presentation/d/yourlink" target="_blank" class="link-item google-slides" id="slides-link">
+                    <i data-lucide="presentation"></i>
+                    <span>Google Slides</span>
+                </a>
+            </section>
+            
+            <section class="steam-section">
+                <div class="steam-card">
+                    <div class="steam-info">
+                        <i data-lucide="steam" class="steam-icon"></i>
+                        <span class="steam-label">Steam Friend Code</span>
+                    </div>
+                    <div class="steam-code-container">
+                        <code id="steam-code">123456789</code>
+                        <button class="copy-btn" id="copy-btn" title="Copy to clipboard">
+                            <i data-lucide="copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="extra-section">
+                <h2 class="extra-title">Find me elsewhere</h2>
+                <div class="extra-tags">
+                    <span class="tag">@handle1</span>
+                    <span class="tag">@handle2</span>
+                    <span class="tag">@handle3</span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

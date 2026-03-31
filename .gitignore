@@ -1,0 +1,13 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor Files
+.vscode/
+.idea/
+*.swp
+
+# Local Node Modules
+node_modules/
+package-lock.json
