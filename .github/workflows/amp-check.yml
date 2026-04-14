@@ -27,9 +27,14 @@ jobs:
 
       - name: Update Status File
         run: |
-          echo "{\"status\": \"${{ steps.check_step.outputs.status }}\", \"last_updated\": \"$(date)\"}" > status.json
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          # Create the file
+          echo "{\"status\": \"online\", \"last_updated\": \"$(date)\"}" > status.json
+          
+          # Setup Git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Commit and Push
           git add status.json
-          git commit -m "Update server status" || exit 0
-          git push
+          git commit -m "chore: update server status [skip ci]" || exit 0
+          git push origin main
