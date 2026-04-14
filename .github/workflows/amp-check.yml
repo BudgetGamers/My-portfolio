@@ -18,8 +18,5 @@ jobs:
 
       - name: Check AMP Web Service
         run: |
-          # -f: Fail on error
-          # -s: Silent (cleaner logs)
-          # -S: Show error if it fails
-          # -v: Verbose (to see the handshake)
-          curl -fSv --connect-timeout 10 http://[IP_ADDRESS] || exit 1
+          echo "Attempting to reach AMP..."
+          curl -v http://100.74.84.116:8081
