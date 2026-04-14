@@ -17,6 +17,19 @@ jobs:
           tags: tag:github  # Ensure this tag matches what you set in Tailscale
 
       - name: Check AMP Web Service
+        id: check_step
         run: |
-          echo "Connecting to AMP at 100.74.84.116:8081..."
-          curl -v --connect-timeout 15 http://100.74.84.116:8081
+          if curl -s --connect-timeout 30 http://100.74.84.116:8081; then
+            echo "status=online" >> $GITHUB_OUTPUT
+          else
+            echo "status=offline" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update Status File
+        run: |
+          echo "{\"status\": \"${{ steps.check_step.outputs.status }}\", \"last_updated\": \"$(date)\"}" > status.json
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add status.json
+          git commit -m "Update server status" || exit 0
+          git push
