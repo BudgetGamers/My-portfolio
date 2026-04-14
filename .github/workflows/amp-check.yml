@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4  # <--- THIS IS THE MISSING PIECE
-        
+
       - name: Connect to Tailscale
         uses: tailscale/github-action@v2
         with:
@@ -19,25 +19,17 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:github  # Ensure this tag matches what you set in Tailscale
 
-      - name: Check AMP Web Service
-        id: check_step
+      - name: Fetch Live AMP Data
         run: |
-          if curl -s --connect-timeout 30 http://100.74.84.116:8081; then
-            echo "status=online" >> $GITHUB_OUTPUT
-          else
-            echo "status=offline" >> $GITHUB_OUTPUT
-          fi
+          curl -f -s -X POST "http://100.74.84.116:8081/API/Core/GetInstances" \
+            -H "Content-Type: application/json" \
+            -d "{\"Username\": \"${{ secrets.AMP_USERNAME }}\", \"Password\": \"${{ secrets.AMP_PASSWORD }}\"}" \
+            -o status.json
 
       - name: Update Status File
         run: |
-          # Create the file
-          echo "{\"status\": \"online\", \"last_updated\": \"$(date)\"}" > status.json
-          
-          # Setup Git
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Commit and Push
           git add status.json
-          git commit -m "chore: update server status [skip ci]" || exit 0
-          git push origin main
+          git commit -m "chore: live amp update [skip ci]" || exit 0
+          git push
