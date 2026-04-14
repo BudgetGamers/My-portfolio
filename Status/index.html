@@ -4,22 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Status | My Portfolio</title>
+    <title>Server Status | BudgetGamers</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../Images/Logo.png">
 </head>
 
 <body>
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
 
-    <div class="container">
-        <a href="../" class="back-button">← Back to Portfolio</a>
+    <main class="container">
+        <div class="profile-card">
+            <header class="status-header">
+                <div class="avatar-container">
+                    <img src="../Images/Logo.png" alt="BudgetGamers Logo" class="avatar">
+                </div>
+                <h1 class="title">Server Status</h1>
+                <p class="subtitle">Live updates from the BudgetGamers network</p>
+            </header>
 
-        <h1>Live Server Status</h1>
-        <p>Updates every 30 minutes via GitHub Actions</p>
+            <div id="server-display">
+                <!-- Populated by script.js -->
+                <p>Establishing connection to network...</p>
+            </div>
 
-        <div id="server-display">
-            <p>Loading server data...</p>
+            <a href="../index.html" class="back-link">
+                <span>← Back to Portfolio</span>
+            </a>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
