@@ -14,7 +14,7 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:Github  # Ensure this tag matches what you set in Tailscale
+          tags: tag:github  # Ensure this tag matches what you set in Tailscale
 
       - name: Check AMP Web Service
         run: |
