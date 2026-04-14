@@ -21,10 +21,23 @@ jobs:
 
       - name: Fetch Live AMP Data
         run: |
+          # 1. Login to get a SessionID
+          SESSION_RESPONSE=$(curl -s -X POST "http://100.74.84.116:8081/API/Core/Login" \
+            -H "Content-Type: application/json" \
+            -d "{\"Username\": \"${{ secrets.AMP_USERNAME }}\", \"Password\": \"${{ secrets.AMP_PASSWORD }}\", \"Token\": \"\", \"RememberMe\": false}")
+
+          SESSION_ID=$(echo $SESSION_RESPONSE | jq -r '.SessionID')
+
+          if [ "$SESSION_ID" == "null" ] || [ -z "$SESSION_ID" ]; then
+            echo "Login failed! Response: $SESSION_RESPONSE"
+            exit 1
+          fi
+
+          # 2. Use the SessionID to get instances
           curl -f -s -X POST "http://100.74.84.116:8081/API/ADSModule/GetInstances" \
             -H "Content-Type: application/json" \
             -H "Accept: application/json" \
-            -d "{\"Username\": \"${{ secrets.AMP_USERNAME }}\", \"Password\": \"${{ secrets.AMP_PASSWORD }}\"}" \
+            -d "{\"SESSIONID\": \"$SESSION_ID\"}" \
             -o status.json
 
       - name: Update Status File
