@@ -9,6 +9,9 @@ jobs:
   check-server:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # <--- THIS IS THE MISSING PIECE
+        
       - name: Connect to Tailscale
         uses: tailscale/github-action@v2
         with:
