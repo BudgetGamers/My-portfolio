@@ -22,4 +22,4 @@ jobs:
           # -s: Silent (cleaner logs)
           # -S: Show error if it fails
           # -v: Verbose (to see the handshake)
-          curl -fsv --connect-timeout 10 http://[IP_ADDRESS] || exit 1
+          curl -fSv --connect-timeout 10 http://[IP_ADDRESS] || exit 1
