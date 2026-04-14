@@ -18,5 +18,5 @@ jobs:
 
       - name: Check AMP Web Service
         run: |
-          echo "Attempting to reach AMP..."
-          curl -v http://100.74.84.116:8081
+          echo "Connecting to AMP at 100.74.84.116:8081..."
+          curl -v --connect-timeout 15 http://100.74.84.116:8081
