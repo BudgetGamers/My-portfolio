@@ -23,6 +23,7 @@ jobs:
         run: |
           curl -f -s -X POST "http://100.74.84.116:8081/API/ADSModule/GetInstances" \
             -H "Content-Type: application/json" \
+            -H "Accept: application/json" \
             -d "{\"Username\": \"${{ secrets.AMP_USERNAME }}\", \"Password\": \"${{ secrets.AMP_PASSWORD }}\"}" \
             -o status.json
 
