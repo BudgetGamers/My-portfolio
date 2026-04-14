@@ -2,24 +2,30 @@ async function updateStatus() {
     const display = document.getElementById('server-display');
 
     try {
-        // Look up one folder to find the data
+        // '../' is correct because status.json is in the root
         const response = await fetch('../status.json');
 
-        if (!response.ok) throw new Error("Could not find status file.");
+        if (!response.ok) {
+            throw new Error(`File not found: ${response.status}`);
+        }
 
         const rawData = await response.json();
-        const instances = rawData[0].AvailableInstances;
 
-        display.innerHTML = ''; // Clear the "Establishing connection" message
+        // Handle the AMP array structure
+        const data = rawData[0];
+        const instances = data.AvailableInstances;
+
+        // Clear the placeholder text
+        display.innerHTML = '';
 
         instances.forEach(server => {
-            // Hide the ADS controller
+            // Hide the controller
             if (server.InstanceName === 'ADS01') return;
 
-            // Map States
             let statusText, statusClass;
             const state = server.AppState;
 
+            // 20 = Running, 50 = Sleeping -> Online
             if (state === 20 || state === 50) {
                 statusText = "Online";
                 statusClass = "status-online";
@@ -31,14 +37,12 @@ async function updateStatus() {
                 statusClass = "status-offline";
             }
 
-            // Description Logic
+            // Metrics safely parsed
+            const players = server.Metrics?.["Active Users"]?.RawValue ?? 0;
+            const maxPlayers = server.Metrics?.["Active Users"]?.MaxValue ?? 0;
             const description = server.Description ? `<p>${server.Description}</p>` : '';
 
-            // Metrics
-            const players = server.Metrics["Active Users"] ? server.Metrics["Active Users"].RawValue : 0;
-            const maxPlayers = server.Metrics["Active Users"] ? server.Metrics["Active Users"].MaxValue : 0;
-
-            // Build the card using your new CSS classes
+            // Injecting using your exact CSS classes
             display.innerHTML += `
                 <div class="server-card">
                     <div class="card-header">
@@ -55,9 +59,10 @@ async function updateStatus() {
         });
 
     } catch (err) {
-        console.error("Fetch error:", err);
-        display.innerHTML = `<p style="color: var(--accent-red)">Error: Unable to load server data.</p>`;
+        console.error("Status update failed:", err);
+        display.innerHTML = `<p style="color: #ef4444; font-size: 0.85rem;">Unable to load server data. Check if status.json exists in root.</p>`;
     }
 }
 
+// Fire the function
 updateStatus();
