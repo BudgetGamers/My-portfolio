@@ -1,0 +1,23 @@
+name: AMP Status Check
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Runs every 30 mins
+  workflow_dispatch:       # Allows manual trigger
+
+jobs:
+  check-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci  # Ensure this tag matches what you set in Tailscale
+
+      - name: Check AMP Web Service
+        run: |
+          # Replace 100.x.y.z with your server's Tailscale IP
+          # Replace 8080 with your AMP port if different
+          curl -f http://100.74.84.116:8081 || exit 1
