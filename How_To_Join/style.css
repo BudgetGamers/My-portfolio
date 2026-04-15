@@ -9,6 +9,8 @@
     --accent-red: #ef4444;
     --accent-blue: #3b82f6;
     --accent-purple: #a855f7;
+    --text-blue: #3b82f6;
+    --text-dark-blue: #081a33;
 }
 
 * {
@@ -175,14 +177,14 @@ body {
 }
 
 .instruction-step a {
-    color: var(--accent-blue);
+    color: var(--text-blue);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s;
 }
 
 .instruction-step a:hover {
-    color: var(--accent-purple);
+    color: var(--text-dark-blue);
 }
 
 /* Media styling */
