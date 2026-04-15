@@ -31,7 +31,8 @@ async function updateStatus() {
 
             // PULLING THE PORT: Splits "0.0.0.0:PORT" and takes the end
             const endpoint = server.ApplicationEndpoints?.[0]?.Endpoint || "";
-            const port = endpoint.split(':').pop() || "PORT";
+            const port = endpoint.split(':').pop() || "25565";
+            const ipAddress = `25.32.195.216:${port}`;
 
             const players = server.Metrics?.["Active Users"]?.RawValue ?? 0;
             const maxPlayers = server.Metrics?.["Active Users"]?.MaxValue ?? 0;
@@ -47,9 +48,12 @@ async function updateStatus() {
                         ${description}
                         <p><b>Game:</b> ${server.ModuleDisplayName || server.Module}</p>
                         <p><b>Players:</b> ${players} / ${maxPlayers}</p>
-                        <p style="margin-top: 8px; font-family: monospace; color: var(--accent-blue);">
-                            <b>IP:</b> 25.32.195.216:${port}
-                        </p>
+                        <div class="ip-container">
+                            <span class="ip-text">${ipAddress}</span>
+                            <button class="copy-btn" data-copy="${ipAddress}" title="Copy IP">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>`;
         });
@@ -58,5 +62,25 @@ async function updateStatus() {
         display.innerHTML = "<p>Status currently unavailable.</p>";
     }
 }
+
+// Event Delegation for Copy Buttons
+document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+
+    const textToCopy = btn.getAttribute('data-copy');
+    try {
+        await navigator.clipboard.writeText(textToCopy);
+        
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = '<span style="color: #10b981; font-size: 0.65rem; font-weight: 800; white-space: nowrap;">COPIED!</span>';
+        
+        setTimeout(() => {
+            btn.innerHTML = originalContent;
+        }, 2000);
+    } catch (err) {
+        console.error('Failed to copy text: ', err);
+    }
+});
 
 updateStatus();
