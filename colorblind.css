@@ -7,6 +7,27 @@
 .grayscale body {
     --text-primary: #ffffff;
     --text-secondary: #f3f4f6;
+    --accent-blue: #93c5fd; /* Much lighter blue for grayscale contrast */
+}
+
+/* Specific overrides for link visibility */
+.grayscale a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+.grayscale .instruction-step a {
+    color: #ffffff !important;
+    font-weight: 800;
+}
+
+.grayscale .instruction-step a:hover {
+    color: #f3f4f6 !important;
+}
+
+.grayscale #steam-code {
+    color: #ffffff !important;
+    font-weight: 800;
 }
 
 
