@@ -174,13 +174,6 @@ body {
     margin-bottom: 16px;
 }
 
-.instruction-step code {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    line-height: 1.5;
-    margin-bottom: 16px;
-}
-
 .instruction-step a {
     color: #3b82f6;
     text-decoration: none;
