@@ -27,7 +27,15 @@
 
 .grayscale #steam-code {
     color: #ffffff !important;
-    font-weight: 800;
+    font-weight: 800 !important;
+}
+
+.grayscale .server-info p {
+    color: #ffffff !important;
+}
+
+.grayscale .server-info p[style*="var(--accent-blue)"] {
+    font-weight: 800 !important;
 }
 
 
