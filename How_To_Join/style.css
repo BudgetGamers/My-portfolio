@@ -169,7 +169,7 @@ body {
 
 .instruction-step p {
     font-size: 0.9rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 16px;
 }
