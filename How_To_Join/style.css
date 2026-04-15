@@ -175,14 +175,14 @@ body {
 }
 
 .instruction-step a {
-    color: var(--text-secondary);
+    color: var(--accent-blue);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s;
 }
 
 .instruction-step a:hover {
-    color: var(--text-primary);
+    color: var(--accent-purple);
 }
 
 /* Media styling */
