@@ -1,6 +1,8 @@
 :root {
-    --bg-color: #081a33; /* Deep Ocean Blue */
-    --card-bg: rgba(69, 10, 10, 0.85); /* Contrasting Dark Red with glassmorphism */
+    --bg-color: #081a33;
+    /* Deep Ocean Blue */
+    --card-bg: rgba(69, 10, 10, 0.85);
+    /* Contrasting Dark Red with glassmorphism */
     --card-border: rgba(239, 68, 68, 0.2);
     --text-primary: #fef2f2;
     --text-secondary: #fecaca;
@@ -52,13 +54,23 @@ body {
 }
 
 @keyframes move-1 {
-    from { transform: translate(0, 0); }
-    to { transform: translate(-100px, 100px); }
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100px, 100px);
+    }
 }
 
 @keyframes move-2 {
-    from { transform: translate(0, 0); }
-    to { transform: translate(100px, -100px); }
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, -100px);
+    }
 }
 
 .container {
@@ -69,8 +81,15 @@ body {
 }
 
 @keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Back Link */
@@ -142,7 +161,7 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -165,7 +184,8 @@ body {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
 }
@@ -190,6 +210,7 @@ body {
     .container {
         padding: 15px;
     }
+
     .profile-card {
         padding: 24px;
     }
