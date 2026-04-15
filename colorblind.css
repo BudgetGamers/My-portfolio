@@ -1,8 +1,14 @@
 /* Colorblind accessibility styles */
 
 .grayscale {
-    filter: grayscale(100%) !important;
+    filter: grayscale(100%) brightness(1.1) !important;
 }
+
+.grayscale body {
+    --text-primary: #ffffff;
+    --text-secondary: #f3f4f6;
+}
+
 
 #colorblind-toggle {
     position: fixed;

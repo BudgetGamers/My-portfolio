@@ -21,6 +21,12 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="colorblind.css">
+    <script>
+        if (localStorage.getItem('grayscale') === 'true') {
+            document.documentElement.classList.add('grayscale');
+        }
+    </script>
+    <script src="colorblind.js"></script>
 </head>
 
 <body>
@@ -97,7 +103,6 @@
     </main>
 
     <script src="script.js"></script>
-    <script src="colorblind.js"></script>
 </body>
 
 </html>

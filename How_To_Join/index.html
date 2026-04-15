@@ -13,6 +13,12 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../colorblind.css">
+    <script>
+        if (localStorage.getItem('grayscale') === 'true') {
+            document.documentElement.classList.add('grayscale');
+        }
+    </script>
+    <script src="../colorblind.js"></script>
     <link rel="icon" href="../Images/Logo.png">
 </head>
 
@@ -83,7 +89,7 @@
             </div>
         </div>
     </main>
-    <script src="../colorblind.js"></script>
+    </main>
 </body>
 
 </html>
