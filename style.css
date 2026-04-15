@@ -169,7 +169,7 @@ body {
 .discord:hover { border-left: 4px solid var(--accent-discord); }
 .github:hover { border-left: 4px solid #fff; }
 .curseforge:hover { border-left: 4px solid #f87117; }
-.google-slides:hover { border-left: 4px solid #fde047; }
+.how-to-join:hover { border-left: 4px solid #a855f7; }
 
 /* Steam Section */
 .steam-section {
