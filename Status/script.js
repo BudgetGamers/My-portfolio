@@ -1,8 +1,9 @@
 async function updateStatus() {
     const display = document.getElementById('server-display');
     try {
-        // Cache Buster to ensure the page updates immediately on commit
-        const response = await fetch('../status.json?t=' + new Date().getTime());
+        // Resolve path relative to the current script location to avoid trailing slash issues on GitHub
+        const statusPath = new URL('../status.json', window.location.href).pathname;
+        const response = await fetch(statusPath + '?t=' + new Date().getTime());
 
         if (!response.ok) throw new Error("File not found");
 

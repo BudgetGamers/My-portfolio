@@ -23,16 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Subtle entrance animation for Nav and Buttons
-    const animatedElements = document.querySelectorAll('.nav-link, .btn, .stat-item');
-    animatedElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(10px)';
-        el.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        
-        setTimeout(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }, 100 + (index * 50));
-    });
 });
