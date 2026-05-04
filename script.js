@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await navigator.clipboard.writeText(code);
                 
                 // Visual Feedback
-                copyBtn.innerHTML = '<span style="color: #10b981; font-size: 0.7rem; font-weight:800;">COPIED!</span>';
+                copyBtn.innerHTML = '<span style="color: #10b981; font-size: 0.7rem; font-weight:800; white-space:nowrap;">COPIED!</span>';
                 
                 setTimeout(() => {
                     copyBtn.innerHTML = originalIconHtml;
@@ -23,16 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add a subtle entrance animation delay for children
-    const links = document.querySelectorAll('.link-item');
-    links.forEach((link, index) => {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(10px)';
-        link.style.transition = 'all 0.4s ease-out';
+    // Subtle entrance animation for Nav and Buttons
+    const animatedElements = document.querySelectorAll('.nav-link, .btn, .stat-item');
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(10px)';
+        el.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         
         setTimeout(() => {
-            link.style.opacity = '1';
-            link.style.transform = 'translateY(0)';
-        }, 300 + (index * 100));
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 100 + (index * 50));
     });
 });

@@ -5,20 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BudgetGamers Hub</title>
-    <meta name="description" content="A minimal, centered comunity hub">
+    <meta name="description" content="A community-focused hub for gamers and tech enthusiasts.">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0f172a">
-
-    <!-- Favicon -->
     <link rel="icon" href="Images/Logo.png">
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="colorblind.css">
     <script>
@@ -30,75 +24,83 @@
 </head>
 
 <body>
-    <button id="colorblind-toggle" title="Toggle Black and White Mode">
-        <div class="bw-square"></div>
-    </button>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="Images/Logo.png" alt="Logo">
+            <span>BudgetGamers</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="How_To_Join/index.html" class="nav-link">How to Join</a>
+            <a href="Status/index.html" class="nav-link">Server Status</a>
+            <a href="Modpacks/index.html" class="nav-link">Modpacks</a>
+            <a href="https://github.com/BudgetGamers" target="_blank" class="nav-link">GitHub</a>
+            <a href="https://discord.gg/fDvucph7B3" target="_blank" class="nav-link">Discord</a>
+        </div>
+        <div class="nav-actions">
+            <!-- Colorblind Toggle Integrated in Nav -->
+            <button id="colorblind-toggle" title="Toggle Accessibility Mode">
+                <div class="bw-square"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Background Blobs -->
     <div class="background-blob blob-1"></div>
     <div class="background-blob blob-2"></div>
 
-    <main class="container">
-        <div class="profile-card">
-            <header class="profile-header">
-                <div class="avatar-container">
-                    <img src="Images/Logo.png" alt="BudgetGamers Logo" class="avatar">
-                </div>
-                <h1 class="profile-name">BudgetGamers Hub</h1>
-                <p class="profile-bio">
-                    I am a Gay Furry who likes to build small projects and make fun builds in games.
-                    I host games and i have a decent comunity of fellow furrys and LGBTQ+ people who like to build and
-                    chat.
-                    I try to help as many people with their tech problems as i can.
-                </p>
-            </header>
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">BudgetGamers Hub</h1>
+            <p class="hero-subtitle">
+                I am a Gay Furry who likes to build small projects and make fun builds in games.
+                I host games and i have a decent comunity of fellow furrys and LGBTQ+ people who like to build and
+                chat. I try to help as many people with their tech problems as i can.
+            </p>
+            <div class="hero-btns">
+                <a href="How_To_Join/index.html" class="btn btn-primary">
+                    <img src="https://cdn.simpleicons.org/bookstack/black" alt="" style="width:20px;">
+                    How to Join
+                </a>
+                <a href="Status/index.html" class="btn btn-secondary">
+                    <img src="https://cdn.simpleicons.org/activitypub/white" alt="" style="width:20px;">
+                    Server Status
+                </a>
+            </div>
 
-            <section class="links-section">
-                <a href="https://discord.gg/fDvucph7B3" target="_blank" class="link-item discord" id="discord-link">
-                    <img src="https://cdn.simpleicons.org/discord/white" alt="Discord Logo" class="link-icon">
-                    <span>Discord</span>
-                </a>
-                <a href="https://github.com/BudgetGamers" target="_blank" class="link-item github" id="github-link">
-                    <img src="https://cdn.simpleicons.org/github/white" alt="GitHub Logo" class="link-icon">
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.curseforge.com/members/ire56/projects" target="_blank" class="link-item curseforge"
-                    id="curseforge-link">
-                    <img src="https://cdn.simpleicons.org/curseforge/white" alt="CurseForge Logo" class="link-icon">
-                    <span>CurseForge</span>
-                </a>
-                <a href="How_To_Join/index.html" class="link-item how-to-join" id="how-to-join-link">
-                    <img src="https://cdn.simpleicons.org/bookstack/white" alt="How to Join Logo" class="link-icon">
-                    <span>How To Join</span>
-                </a>
-                <a href="Status/index.html" class="link-item status" id="status-link">
-                    <img src="https://cdn.simpleicons.org/activitypub/white" alt="Status Logo" class="link-icon">
-                    <span>Server Status</span>
-                </a>
-            </section>
-
-            <section class="steam-section">
-                <div class="steam-card">
-                    <div class="steam-info">
-                        <img src="https://cdn.simpleicons.org/steam/white" alt="Steam Logo" class="link-icon-small">
-                        <span class="steam-label">Steam Friend Code</span>
-                    </div>
-                    <div class="steam-code-container">
-                        <code id="steam-code">1800175672</code>
-                        <button class="copy-btn" id="copy-btn" title="Copy to clipboard">
-                            <!-- Simple copy icon via simpleicons or a small fallback -->
-                            <img alt="Copy" style="width:36px; opacity: 0.7;">
-                        </button>
-                    </div>
+            <!-- Steam Friend Code Card (Expanded) -->
+            <div class="steam-mini-card">
+                <div style="display:flex; align-items:center; gap:12px; opacity: 0.8;">
+                    <img src="https://cdn.simpleicons.org/steam/white" alt="Steam" style="width:24px;">
+                    <span style="font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; font-weight:600;">Steam
+                        Friend Code</span>
                 </div>
-            </section>
+                <code id="steam-code">1800175672</code>
+                <button class="btn btn-secondary copy-btn" id="copy-btn" title="Copy to clipboard"
+                    style="padding: 10px 25px; font-size: 0.85rem; border-radius: 30px;">
+                    <img src="https://cdn.simpleicons.org/copy/white" alt=""
+                        style="width:16px; opacity:0.7; margin-right: -22px;">
+                    Copy Code
+                </button>
+            </div>
+        </div>
 
-            <footer class="extra-section">
-                <h2 class="extra-title">Find me elsewhere</h2>
-                <div class="extra-tags">
-                    <!--<span class="tag">@handle1</span>-->
-                    <!--<span class="tag">@handle2</span>-->
-                    <!--<span class="tag">@handle3</span>-->
-                </div>
-            </footer>
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-value">20+</span>
+                <span class="stat-label">Networks</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">Active</span>
+                <span class="stat-label">Community</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">Safe</span>
+                <span class="stat-label">LGBTQ+ Space</span>
+            </div>
         </div>
     </main>
 

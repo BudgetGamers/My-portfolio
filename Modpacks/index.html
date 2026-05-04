@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modpacks | BudgetGamers</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../colorblind.css">
+    <script>
+        if (localStorage.getItem('grayscale') === 'true') {
+            document.documentElement.classList.add('grayscale');
+        }
+    </script>
+    <script src="../colorblind.js"></script>
+    <link rel="icon" href="../Images/Logo.png">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html" class="nav-logo">
+            <img src="../Images/Logo.png" alt="Logo">
+            <span>BudgetGamers</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="../How_To_Join/index.html" class="nav-link">How to Join</a>
+            <a href="../Status/index.html" class="nav-link">Server Status</a>
+            <a href="index.html" class="nav-link active">Modpacks</a>
+            <a href="https://github.com/BudgetGamers" target="_blank" class="nav-link">GitHub</a>
+            <a href="https://discord.gg/fDvucph7B3" target="_blank" class="nav-link">Discord</a>
+        </div>
+        <div class="nav-actions">
+            <button id="colorblind-toggle" title="Toggle Accessibility Mode">
+                <div class="bw-square"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Background Blobs -->
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+
+    <main class="page-container" style="max-width: none; width: 100%; padding-left: 0; padding-right: 0;">
+        <header class="header" style="text-align: center; margin-bottom: 60px;">
+            <h1 class="hero-title" style="font-size: 3.5rem;">Modpacks</h1>
+            <p class="hero-subtitle">Official Modpacks for BudgetGamers Servers</p>
+        </header>
+
+        <div id="modpack-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; width: 100%; padding: 0 80px; box-sizing: border-box;">
+
+            <section class="modpack-content" style="text-align: center;">
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 class="modpack-title" style="color: #fff; margin-bottom: 20px;">Logical Demise</h2>
+                    <p class="modpack-desc"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; transition: all 0.3s ease;">
+                        Enjoy the logic and advanced world of AE2, ComputerCraft and much more in this modpack logical
+                        Demise
+                    </p>
+                    <button class="show-more"
+                        style="background: none; border: none; color: var(--accent-primary); cursor: pointer; font-size: 0.8rem; margin-bottom: 20px; display: none; font-weight: 700;">Show
+                        More</button>
+                    <a href="https://github.com/BudgetGamers/Minecraft_Modpacks/raw/refs/heads/main/Logical%20Demise.zip"
+                        class="btn btn-primary"
+                        style="display: inline-flex; justify-content: center; margin: 0 auto; width: 100%;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span class="download-text">Download Template</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="modpack-content" style="text-align: center;">
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 class="modpack-title" style="color: #fff; margin-bottom: 20px;">Client Improvements</h2>
+                    <p class="modpack-desc"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; transition: all 0.3s ease;">
+                        A client-side modpack to improve the vanilla experience with mods like Embedium, Oculus, Simple
+                        Voice Chat, and more.
+                    </p>
+                    <button class="show-more"
+                        style="background: none; border: none; color: var(--accent-primary); cursor: pointer; font-size: 0.8rem; margin-bottom: 20px; display: none; font-weight: 700;">Show
+                        More</button>
+                    <a href="https://www.curseforge.com/minecraft/modpacks/bg-client-improvements/install/7723246"
+                        class="btn btn-primary"
+                        style="display: inline-flex; justify-content: center; margin: 0 auto; width: 100%;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span class="download-text">Download Template</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="modpack-content" style="text-align: center;">
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 class="modpack-title" style="color: #fff; margin-bottom: 20px;">Industrial Worlds</h2>
+                    <p class="modpack-desc"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; transition: all 0.3s ease;">
+                        A Dense Modpack that includes Create, Tinkers Construct, Iron Spells & Spellbooks, Ice & Fire
+                        Dragons, and much more.
+                    </p>
+                    <button class="show-more"
+                        style="background: none; border: none; color: var(--accent-primary); cursor: pointer; font-size: 0.8rem; margin-bottom: 20px; display: none; font-weight: 700;">Show
+                        More</button>
+                    <a href="https://www.curseforge.com/minecraft/modpacks/industrial-worlds/install/7585114"
+                        class="btn btn-primary"
+                        style="display: inline-flex; justify-content: center; margin: 0 auto; width: 100%;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span class="download-text">Download Template</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="modpack-content" style="text-align: center;">
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 class="modpack-title" style="color: #fff; margin-bottom: 20px;">Warbound</h2>
+                    <p class="modpack-desc"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; transition: all 0.3s ease;">
+                        A Fun combat focused modpack that includes, Tacz, and a fair bit of addons for tacz this modpack
+                        is mostly abandoned so do as you wish with it.
+                    </p>
+                    <button class="show-more"
+                        style="background: none; border: none; color: var(--accent-primary); cursor: pointer; font-size: 0.8rem; margin-bottom: 20px; display: none; font-weight: 700;">Show
+                        More</button>
+                    <a href="https://www.curseforge.com/minecraft/modpacks/warbound/install/7597502"
+                        class="btn btn-primary"
+                        style="display: inline-flex; justify-content: center; margin: 0 auto; width: 100%;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span class="download-text">Download Template</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="modpack-content" style="text-align: center;">
+                <div
+                    style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h2 class="modpack-title" style="color: #fff; margin-bottom: 20px;">Coming Soon</h2>
+                    <p class="modpack-desc"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; transition: all 0.3s ease;">
+                        A new modpack is coming soon.
+                    </p>
+                    <button class="show-more"
+                        style="background: none; border: none; color: var(--accent-primary); cursor: pointer; font-size: 0.8rem; margin-bottom: 20px; display: none; font-weight: 700;">Show
+                        More</button>
+                    <a href="#" class="btn btn-primary"
+                        style="display: inline-flex; justify-content: center; margin: 0 auto; width: 100%;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span class="download-text">Download Template</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <div id="pagination-controls"
+            style="display: flex; justify-content: center; gap: 15px; margin-top: 60px; padding-bottom: 60px;">
+            <button id="prev-page" class="btn btn-secondary" style="padding: 10px 20px;">Previous</button>
+            <span id="page-info" style="color: var(--text-secondary); align-self: center; font-weight: 600;">Page
+                1</span>
+            <button id="next-page" class="btn btn-secondary" style="padding: 10px 20px;">Next</button>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = Array.from(document.querySelectorAll('.modpack-content'));
+            const itemsPerPage = 40;
+            let currentPage = 1;
+
+            // Initialization
+            sections.forEach(section => {
+                const titleElement = section.querySelector('.modpack-title');
+                const downloadBtn = section.querySelector('.btn-primary');
+                const downloadText = section.querySelector('.download-text');
+                const desc = section.querySelector('.modpack-desc');
+                const showMore = section.querySelector('.show-more');
+
+                // Dynamic Title and Button Hiding
+                if (titleElement && downloadBtn && downloadText) {
+                    const title = titleElement.innerText.trim();
+                    if (title.toLowerCase() === 'coming soon') {
+                        downloadBtn.style.display = 'none';
+                    } else {
+                        downloadText.innerText = `Download ${title}`;
+                    }
+                }
+
+                // Show More Logic
+                if (desc && showMore) {
+                    // Check if truncated
+                    if (desc.scrollHeight > desc.clientHeight) {
+                        showMore.style.display = 'inline-block';
+                    }
+
+                    showMore.addEventListener('click', () => {
+                        const isExpanded = desc.style.display === 'block';
+                        if (isExpanded) {
+                            desc.style.display = '-webkit-box';
+                            showMore.innerText = 'Show More';
+                        } else {
+                            desc.style.display = 'block';
+                            showMore.innerText = 'Show Less';
+                        }
+                    });
+                }
+            });
+
+            // Pagination Logic
+            const paginationControls = document.getElementById('pagination-controls');
+            const totalPages = Math.ceil(sections.length / itemsPerPage);
+
+            if (totalPages <= 1) {
+                paginationControls.style.display = 'none';
+            }
+
+            function updateDisplay() {
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                sections.forEach((s, i) => {
+                    s.style.display = (i >= start && i < end) ? 'block' : 'none';
+                });
+
+                document.getElementById('page-info').innerText = `Page ${currentPage} of ${totalPages}`;
+                document.getElementById('prev-page').disabled = (currentPage === 1);
+                document.getElementById('next-page').disabled = (currentPage === totalPages);
+            }
+
+            document.getElementById('prev-page').addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateDisplay();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            document.getElementById('next-page').addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updateDisplay();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            updateDisplay();
+        });
+    </script>
+</body>
+
+</html>
