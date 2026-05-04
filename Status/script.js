@@ -51,8 +51,10 @@ async function updateStatus() {
                         <p><b>Players:</b> ${players} / ${maxPlayers}</p>
                         <div class="ip-container">
                             <span class="ip-text">${ipAddress}</span>
-                            <button class="copy-btn" data-copy="${ipAddress}" title="Copy IP">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <button class="btn btn-secondary copy-btn" data-copy="${ipAddress}" title="Copy IP" 
+                                style="padding: 6px 12px; font-size: 0.75rem; border-radius: 20px; gap: 6px;">
+                                <img src="https://cdn.simpleicons.org/copy/white" alt="" style="width:12px; opacity:0.7;">
+                                Copy
                             </button>
                         </div>
                     </div>
