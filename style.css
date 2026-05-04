@@ -70,7 +70,6 @@ body {
     height: 70px;
     background: var(--navbar-bg);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -260,6 +259,8 @@ body {
 #colorblind-toggle .bw-square {
     width: 18px;
     height: 18px;
+    background: linear-gradient(135deg, #fff 50%, #000 50%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Steam Section (moved or adjusted) */
