@@ -52,8 +52,8 @@ async function updateStatus() {
                         <div class="ip-container">
                             <span class="ip-text">${ipAddress}</span>
                             <button class="btn btn-secondary copy-btn" data-copy="${ipAddress}" title="Copy IP" 
-                                style="padding: 6px 12px; font-size: 0.75rem; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
-                                <img src="https://cdn.simpleicons.org/copy/white" alt="" style="width:14px; opacity:0.8;">
+                                style="padding: 6px 12px; font-size: 0.75rem; border-radius: 20px; display: flex; align-items: center; gap: 0px;">
+                                <img src="https://cdn.simpleicons.org/copy/white" alt="" style="width:0px; opacity:0.8;">
                                 <span>Copy</span>
                             </button>
                         </div>
@@ -74,10 +74,10 @@ document.addEventListener('click', async (e) => {
     const textToCopy = btn.getAttribute('data-copy');
     try {
         await navigator.clipboard.writeText(textToCopy);
-        
+
         const originalContent = btn.innerHTML;
         btn.innerHTML = '<span style="color: #10b981; font-size: 0.65rem; font-weight: 800; white-space: nowrap;">COPIED!</span>';
-        
+
         setTimeout(() => {
             btn.innerHTML = originalContent;
         }, 2000);
