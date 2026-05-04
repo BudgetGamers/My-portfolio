@@ -53,7 +53,6 @@ async function updateStatus() {
                             <span class="ip-text">${ipAddress}</span>
                             <button class="btn btn-secondary copy-btn" data-copy="${ipAddress}" title="Copy IP" 
                                 style="padding: 6px 12px; font-size: 0.75rem; border-radius: 20px; display: flex; align-items: center; gap: 0px;">
-                                <img src="https://cdn.simpleicons.org/copy/white" alt="" style="width:0px; opacity:0.8;">
                                 <span>Copy</span>
                             </button>
                         </div>
